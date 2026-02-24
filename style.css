@@ -1,0 +1,608 @@
+/* =============================== */
+/* OSNOVNI STILOVI STRANICE */
+/* =============================== */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.content {
+    flex: 1;
+}
+
+/* =============================== */
+/* HEADER */
+/* =============================== */
+
+.header-container {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+header img {
+    width: 100px !important;
+    height: auto !important;
+    position: absolute;
+    right: 20%;
+    z-index: 10;
+}
+
+/* =============================== */
+/* NAVBAR */
+/* =============================== */
+
+.navbar {
+    background-color: #ff8800 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: white !important;
+    font-weight: 600;
+}
+
+/* Hover efekti isključeni */
+.navbar .nav-link:hover,
+.navbar .btn-outline-success:hover,
+.footer .btn-success:hover,
+.btn-success:hover,
+.btn-primary:hover,
+.btn-cok:hover {
+    background-color: inherit !important;
+    color: inherit !important;
+    transform: none !important;
+    text-decoration: none !important;
+    border-color: inherit !important;
+}
+
+/* Dugmad u navbaru */
+.navbar .btn-outline-success {
+    color: #fff;
+    border-color: #fff;
+}
+
+/* =============================== */
+/* FOOTER */
+/* =============================== */
+
+.footer {
+    background-color: #ff8800 !important;
+    /* 🔸 Narandžasta pozadina vraćena */
+    color: #fff;
+    padding: 40px 20px;
+    border-top: 0px solid #000;
+    margin-top: auto;
+}
+
+footer {
+    padding-top: 80px;
+}
+
+.footer h3 {
+    color: #fff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+}
+
+.footer p {
+    margin: 6px 0;
+    font-size: 15px;
+}
+
+.footer .row {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer .row:last-child {
+    border-bottom: none;
+}
+
+/* DUGME "PRIJAVA" */
+.footer .btn-success {
+    background-color: #fff;
+    color: #ff8800;
+    border: none;
+    font-weight: 600;
+    padding: 10px 24px;
+    transition: none !important;
+}
+
+/* =============================== */
+/* RESPONSIVE */
+/* =============================== */
+
+.footer iframe {
+    width: 100%;
+    height: 250px;
+}
+
+header img {
+    left: 130px;
+    width: 70px !important;
+    height: 70px !important;
+}
+
+.bg-orange {
+    background-color: #ff7a00;
+}
+
+/* Cijeli header */
+.header-top {
+    position: relative;
+    background-color: #ffffff;
+    padding-top: 90px;
+}
+
+/* Logo skroz gore, iznad trake */
+.logo-box {
+    position: absolute;
+    top: 0px;
+    left: 0%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+/* Slika 67 */
+.header-logo {
+    height: auto;
+    width: auto;
+}
+
+/* Navigacija ispod loga */
+.navbar {
+    padding: 12px 0;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+/* ========== OVE ISPOD NE DIRAMO ========== */
+.btn {
+    background-color: #ff7a00;
+    color: #fff;
+}
+
+
+/* =============================== */
+/* FOOTER DO KRAJA REDA */
+/* =============================== */
+
+.footer {
+    background-color: #ff8800 !important;
+    /* osigurava narandžastu pozadinu */
+    width: 100vw;
+    /* cijela širina ekrana */
+    margin-left: calc(-1 * (100vw - 100%)/2);
+    /* poravnava sa ivicama */
+}
+
+.card-text-cijena-dole {
+    color: #ff7a00;
+    text-decoration: line-through;
+}
+
+.card-text-cijena {
+    color: #ff8800;
+}
+
+.banner-dole {
+    color: red;
+}
+
+.bg-black {
+    background-color: #0b0b0b !important;
+}
+
+.site-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-bottom: 28px;
+}
+
+/* Payment logos */
+.payment-logos .pay-logo {
+    height: 32px;
+    object-fit: contain;
+    filter: none;
+    opacity: 0.95;
+    background: transparent;
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+/* make logos slightly larger on desktop */
+@media (min-width: 768px) {
+    .payment-logos .pay-logo {
+        height: 36px;
+    }
+}
+
+/* Social buttons (dark circular) */
+.social-btn {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    text-decoration: none;
+    transition: transform .12s ease, background .12s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.social-btn i {
+    font-size: 15px;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* small text style */
+.copyright {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.copyright a {
+    color: #4ea6ff;
+}
+
+/* link color for brand */
+
+/* Responsive stacking tweaks */
+@media (max-width: 575.98px) {
+
+    .social-btn {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+.pay-icon {
+    height: 45px;
+    object-fit: contain;
+
+}
+
+/* društvene mreže – male okrugle ikonice */
+.social-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 3px 12px rgb(255, 255, 255, 0.2);
+}
+
+.icons-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+}
+
+.text-muted-small {
+    color: white;
+}
+
+.social-icons a {
+    color: white;
+    /* početna boja */
+    transition: 0.3s;
+    /* glatka animacija */
+}
+
+.social-icons a:hover {
+    color: black;
+    /* boja kada pređe miš */
+}
+
+.contact-float {
+    background-color: #ff8c00;
+    color: #fff;
+
+    padding: 25px;
+    border-radius: 18px;
+    /* jače zakrivljenje */
+
+    margin: 40px 0;
+    /* BIJELI PROSTOR OKO */
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.2),
+        0 4px 10px rgba(0, 0, 0, 0.15);
+
+    position: relative;
+}
+
+/* tekst */
+.contact-float h5 {
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.contact-float ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.contact-float ul li {
+    margin-bottom: 8px;
+}
+
+
+.contact-float {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.contact-float {
+    background-color: #ff8c00;
+    color: #fff;
+
+    padding: 25px;
+    border-radius: 18px;
+
+    margin: 40px 25px;
+    /* GORE-DOLE | LIJEVO-DESNO */
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.2),
+        0 4px 10px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s ease;
+}
+
+.newsletter-wrapper {
+    padding: 80px 20px;
+    /* BIJELI PROSTOR OKO */
+    background-color: #ff8c00;
+    /* ako je sekcija narandžasta */
+}
+
+.newsletter-box {
+    max-width: 900px;
+    margin: auto;
+
+    background-color: #fff7e6;
+    text-align: center;
+
+    padding: 50px 40px;
+    border-radius: 28px;
+    /* JAKO ZAKRIVLJENO */
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s ease;
+
+    max-width: 1200px;
+    /* SKORO DO KRAJA */
+    width: 100%;
+
+    padding: 25px 40px;
+    /* TANJA – duplo manja visina */
+    border-radius: 26px;
+    /* i dalje zakrivljena */
+
+    background-color: #fff7e6;
+    text-align: center;
+
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+.newsletter-box:hover {
+    transform: translateY(-6px);
+}
+
+/* tekst */
+.newsletter-box h2 {
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.newsletter-box p {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* inputi */
+.newsletter-inputs {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.newsletter-inputs input {
+    width: 280px;
+    padding: 12px 14px;
+    /* TANJI */
+    border-radius: 12px;
+}
+
+/* dugme */
+.newsletter-box button {
+    margin-top: 30px;
+    padding: 14px 40px;
+
+    border: none;
+    border-radius: 14px;
+
+    background-color: #ffa500;
+    color: #fff;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.newsletter-box button:hover {
+    background-color: #ff8c00;
+}
+
+.newsletter-wrapper {
+    padding: 50px 20px;
+    background-color: #ff8c00;
+}
+
+.newsletter-box {
+    max-width: 1300px;
+    margin: auto;
+
+    background-color: #fff7e6;
+    border-radius: 26px;
+
+    padding: 25px 40px;
+
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* SPLIT */
+.split-box {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* LIJEVO */
+.box-left {
+    flex: 1;
+}
+
+.box-left h3 {
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.box-left p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+
+/* DESNO */
+.box-right {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.box-right h4 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.box-right p {
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .split-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter-inputs {
+        justify-content: center;
+    }
+}
+
+.kontakt-sekcija {
+    position: relative;
+    /* ili samo ukloni position */
+}
+
+.profilna {
+    width: 220px;
+    height: 220px;
+    padding: 10px;
+    border-radius: 50%;
+    background: orange;
+    box-sizing: border-box;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.profilna img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile-flex {
+    display: flex;
+    flex-direction: column;
+    /* slika gore, tekst dole */
+    align-items: center;
+    /* centrira sve horizontalno */
+    gap: 10px;
+    /* razmak između slike i teksta */
+}
+
+#clock {
+    color: white;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.info-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.info-box {
+    background-color: #ff8c00;
+    padding: 40px 25px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    height: 100%;
+}
+
+.info-box h3 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.info-box p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.info-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.onamatxt {
+    color: white;
+}
+
+.onama {
+    font-weight: bold;
+    color: #ff8c00;
+}
