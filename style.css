@@ -32,7 +32,7 @@ header img {
     width: 100px !important;
     height: auto !important;
     position: absolute;
-    left: 110px;
+    right: 20%;
     z-index: 10;
 }
 
@@ -84,6 +84,10 @@ header img {
     margin-top: auto;
 }
 
+footer {
+    padding-top: 80px;
+}
+
 .footer h3 {
     color: #fff;
     border-bottom: 2px solid rgba(255, 255, 255, 0.3);
@@ -125,8 +129,9 @@ header img {
 }
 
 header img {
-    left: 50px;
-    width: 80px !important;
+    left: 130px;
+    width: 70px !important;
+    height: 70px !important;
 }
 
 .bg-orange {
@@ -137,7 +142,7 @@ header img {
 .header-top {
     position: relative;
     background-color: #ffffff;
-    padding-top: 112px;
+    padding-top: 90px;
 }
 
 /* Logo skroz gore, iznad trake */
@@ -154,7 +159,7 @@ header img {
 
 /* Slika 67 */
 .header-logo {
-    height: 45px;
+    height: auto;
     width: auto;
 }
 
@@ -311,4 +316,293 @@ header img {
 .social-icons a:hover {
     color: black;
     /* boja kada pređe miš */
+}
+
+.contact-float {
+    background-color: #ff8c00;
+    color: #fff;
+
+    padding: 25px;
+    border-radius: 18px;
+    /* jače zakrivljenje */
+
+    margin: 40px 0;
+    /* BIJELI PROSTOR OKO */
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.2),
+        0 4px 10px rgba(0, 0, 0, 0.15);
+
+    position: relative;
+}
+
+/* tekst */
+.contact-float h5 {
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.contact-float ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.contact-float ul li {
+    margin-bottom: 8px;
+}
+
+
+.contact-float {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.contact-float {
+    background-color: #ff8c00;
+    color: #fff;
+
+    padding: 25px;
+    border-radius: 18px;
+
+    margin: 40px 25px;
+    /* GORE-DOLE | LIJEVO-DESNO */
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.2),
+        0 4px 10px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s ease;
+}
+
+.newsletter-wrapper {
+    padding: 80px 20px;
+    /* BIJELI PROSTOR OKO */
+    background-color: #ff8c00;
+    /* ako je sekcija narandžasta */
+}
+
+.newsletter-box {
+    max-width: 900px;
+    margin: auto;
+
+    background-color: #fff7e6;
+    text-align: center;
+
+    padding: 50px 40px;
+    border-radius: 28px;
+    /* JAKO ZAKRIVLJENO */
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s ease;
+
+    max-width: 1200px;
+    /* SKORO DO KRAJA */
+    width: 100%;
+
+    padding: 25px 40px;
+    /* TANJA – duplo manja visina */
+    border-radius: 26px;
+    /* i dalje zakrivljena */
+
+    background-color: #fff7e6;
+    text-align: center;
+
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+.newsletter-box:hover {
+    transform: translateY(-6px);
+}
+
+/* tekst */
+.newsletter-box h2 {
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.newsletter-box p {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* inputi */
+.newsletter-inputs {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.newsletter-inputs input {
+    width: 280px;
+    padding: 12px 14px;
+    /* TANJI */
+    border-radius: 12px;
+}
+
+/* dugme */
+.newsletter-box button {
+    margin-top: 30px;
+    padding: 14px 40px;
+
+    border: none;
+    border-radius: 14px;
+
+    background-color: #ffa500;
+    color: #fff;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.newsletter-box button:hover {
+    background-color: #ff8c00;
+}
+
+.newsletter-wrapper {
+    padding: 50px 20px;
+    background-color: #ff8c00;
+}
+
+.newsletter-box {
+    max-width: 1300px;
+    margin: auto;
+
+    background-color: #fff7e6;
+    border-radius: 26px;
+
+    padding: 25px 40px;
+
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* SPLIT */
+.split-box {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* LIJEVO */
+.box-left {
+    flex: 1;
+}
+
+.box-left h3 {
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.box-left p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+
+/* DESNO */
+.box-right {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.box-right h4 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.box-right p {
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .split-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter-inputs {
+        justify-content: center;
+    }
+}
+
+.kontakt-sekcija {
+    position: relative;
+    /* ili samo ukloni position */
+}
+
+.profilna {
+    width: 220px;
+    height: 220px;
+    padding: 10px;
+    border-radius: 50%;
+    background: orange;
+    box-sizing: border-box;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.profilna img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile-flex {
+    display: flex;
+    flex-direction: column;
+    /* slika gore, tekst dole */
+    align-items: center;
+    /* centrira sve horizontalno */
+    gap: 10px;
+    /* razmak između slike i teksta */
+}
+
+#clock {
+    color: white;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.info-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.info-box {
+    background-color: #ff8c00;
+    padding: 40px 25px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    height: 100%;
+}
+
+.info-box h3 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.info-box p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.info-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.onamatxt {
+    color: white;
+}
+
+.onama {
+    font-weight: bold;
+    color: #ff8c00;
 }
