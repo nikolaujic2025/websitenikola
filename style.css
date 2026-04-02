@@ -128,10 +128,12 @@ footer {
     height: 250px;
 }
 
+@media (min-width:50px) { 
 header img {
     left: 130px;
     width: 70px !important;
     height: 70px !important;
+}
 }
 
 .bg-orange {
@@ -146,6 +148,7 @@ header img {
 }
 
 /* Logo skroz gore, iznad trake */
+
 .logo-box {
     position: absolute;
     top: 0px;
@@ -157,12 +160,8 @@ header img {
     z-index: 10;
 }
 
-/* Slika 67 */
-.header-logo {
-    height: auto;
-    width: auto;
-}
 
+   
 /* Navigacija ispod loga */
 .navbar {
     padding: 12px 0;
