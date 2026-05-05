@@ -50,171 +50,183 @@
         <nav class="navbar navbar-expand-lg navbar-light w-100">
             <div class="container">
                 <a class="navbar-brand" href="#">NU</a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <!-- LIJEVO -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Početna</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Početna</a></li>
                         <li class="nav-item"><a class="nav-link" href="proizvodi.html">Proizvodi</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="onama.html">O nama</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="contact.html">Kontakt</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="karijera.html">Karijera</a></li>
+                        <li class="nav-item"><a class="nav-link" href="onama.html">O nama</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
+                        <li class="nav-item"><a class="nav-link" href="karijera.html">Karijera</a></li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Pretraživanje" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Pretraživanje</button>
-                    </form>
+
+                    <!-- DESNO -->
+                    <div class="d-flex align-items-center gap-2">
+
+                        <!-- Search -->
+                        <input type="text" id="searchInput" class="form-control" placeholder="Pretraživanje"
+                            style="width: 200px;">
+                        <button id="searchBtn" class="btn btn-light">Pretraživanje</button>
+
+                        <!-- LOGIN -->
+                        <a href="login.html" class="btn btn-dark">Prijava</a>
+
+                    </div>
+
                 </div>
             </div>
         </nav>
     </header>
 
-<!-- HERO SEKCIJA -->
-<section class="bg-dark text-white text-center py-5">
-    <div class="container">
-        <h1 class="display-4 fw-bold">Karijera u NU</h1>
-        <p class="lead">Pridruži se našem timu i prijateljskom okruženju.</p>
-    </div>
-</section>
+    <!-- HERO SEKCIJA -->
+    <section class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Karijera u NU</h1>
+            <p class="lead">Pridruži se našem timu i prijateljskom okruženju.</p>
+        </div>
+    </section>
 
-<!-- ZAŠTO RADITI KOD NAS -->
-<section class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Zašto raditi kod nas?</h2>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <i class="fas fa-users fa-3x text-success mb-3"></i>
-                <h5>Odličan tim</h5>
-                <p>Rad u mladom i energičnom timu koji te podržava.</p>
+    <!-- ZAŠTO RADITI KOD NAS -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Zašto raditi kod nas?</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <i class="fas fa-users fa-3x text-success mb-3"></i>
+                    <h5>Odličan tim</h5>
+                    <p>Rad u mladom i energičnom timu koji te podržava.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
+                    <h5>Mogućnost napredovanja</h5>
+                    <p>Stalno ulažemo u edukaciju i razvoj zaposlenih.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-money-bill-wave fa-3x text-success mb-3"></i>
+                    <h5>Konkurentna plata</h5>
+                    <p>Nudimo stabilna primanja i nagrade za trud.</p>
+                </div>
             </div>
-            <div class="col-md-4">
-                <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
-                <h5>Mogućnost napredovanja</h5>
-                <p>Stalno ulažemo u edukaciju i razvoj zaposlenih.</p>
+        </div>
+    </section>
+
+    <!-- OGLASI ZA POSAO -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Otvorene pozicije</h2>
+
+            <div class="row g-4">
+
+                <!-- POSAO 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Dostavljač / Dostavljačica</h5>
+                            <p class="card-text">
+                                Tražimo komunikativnu osobu za dostavljanje robe.
+                            </p>
+                            <ul>
+                                <li>Puno radno vrijeme</li>
+                                <li>Rad u smjenama</li>
+                                <li>Lokacija: Sarajevo</li>
+                            </ul>
+                            <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#applyModal">
+                                Prijavi se
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POSAO 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Developer</h5>
+                            <p class="card-text">
+                                Tražimo osobu koja poznaje HTML, CSS, JavaScript i Bootstrap.
+                            </p>
+                            <ul>
+                                <li>Moguć rad od kuće</li>
+                                <li>Fleksibilno radno vrijeme</li>
+                                <li>Junior / Medior</li>
+                            </ul>
+                            <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#applyModal">
+                                Prijavi se
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POSAO 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Radnik u skladištu</h5>
+                            <p class="card-text">
+                                Potrebna fizički spremna osoba za rad u skladištu.
+                            </p>
+                            <ul>
+                                <li>Stalni radni odnos</li>
+                                <li>Nije potrebno iskustvo</li>
+                                <li>Obuka obezbijeđena</li>
+                            </ul>
+                            <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#applyModal">
+                                Prijavi se
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="col-md-4">
-                <i class="fas fa-money-bill-wave fa-3x text-success mb-3"></i>
-                <h5>Konkurentna plata</h5>
-                <p>Nudimo stabilna primanja i nagrade za trud.</p>
+        </div>
+    </section>
+
+    <!-- MODAL ZA PRIJAVU -->
+    <div class="modal fade" id="applyModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Prijava za posao</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Ime i prezime</label>
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Poruka</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Upload CV</label>
+                            <input type="file" class="form-control">
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">Pošalji prijavu</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</section>
 
-<!-- OGLASI ZA POSAO -->
-<section class="bg-light py-5">
-    <div class="container">
-        <h2 class="text-center mb-5">Otvorene pozicije</h2>
-
-        <div class="row g-4">
-
-            <!-- POSAO 1 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Dostavljač / Dostavljačica</h5>
-                        <p class="card-text">
-                            Tražimo komunikativnu osobu za dostavljanje robe.
-                        </p>
-                        <ul>
-                            <li>Puno radno vrijeme</li>
-                            <li>Rad u smjenama</li>
-                            <li>Lokacija: Sarajevo</li>
-                        </ul>
-                        <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#applyModal">
-                            Prijavi se
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- POSAO 2 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Web Developer</h5>
-                        <p class="card-text">
-                            Tražimo osobu koja poznaje HTML, CSS, JavaScript i Bootstrap.
-                        </p>
-                        <ul>
-                            <li>Moguć rad od kuće</li>
-                            <li>Fleksibilno radno vrijeme</li>
-                            <li>Junior / Medior</li>
-                        </ul>
-                        <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#applyModal">
-                            Prijavi se
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- POSAO 3 -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Radnik u skladištu</h5>
-                        <p class="card-text">
-                            Potrebna fizički spremna osoba za rad u skladištu.
-                        </p>
-                        <ul>
-                            <li>Stalni radni odnos</li>
-                            <li>Nije potrebno iskustvo</li>
-                            <li>Obuka obezbijeđena</li>
-                        </ul>
-                        <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#applyModal">
-                            Prijavi se
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- MODAL ZA PRIJAVU -->
-<div class="modal fade" id="applyModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Prijava za posao</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label">Ime i prezime</label>
-                        <input type="text" class="form-control">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Poruka</label>
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Upload CV</label>
-                        <input type="file" class="form-control">
-                    </div>
-
-                    <button type="submit" class="btn btn-success w-100">Pošalji prijavu</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-        <!-- FOOTER -->
+    <!-- FOOTER -->
     <div class="footer bg-light py-4">
         <div class="container">
             <div class="row">

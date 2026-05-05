@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikola Ujić-Registracija</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Ikonice -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body style="background: linear-gradient(135deg, orange, orange);">
+
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-4 shadow-lg" style="width: 100%; max-width: 420px; border-radius: 15px;">
+
+            <div class="text-center mb-3">
+                <i class="fa fa-user-plus fa-3x mb-2"></i>
+                <h3>Registracija</h3>
+                <p class="text-muted">Kreiraj novi račun</p>
+            </div>
+
+            <form id="registerForm">
+
+                <!-- Ime -->
+                <div class="mb-2">
+                    <input type="text" id="name" class="form-control" placeholder="Ime">
+                    <small class="text-danger" id="nameError"></small>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-2">
+                    <input type="email" id="email" class="form-control" placeholder="Email">
+                    <small class="text-danger" id="emailError"></small>
+                </div>
+
+                <!-- Password -->
+                <div class="mb-2">
+                    <input type="password" id="password" class="form-control" placeholder="Lozinka">
+                    <small class="text-danger" id="passwordError"></small>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="mb-2">
+                    <input type="password" id="confirmPassword" class="form-control" placeholder="Ponovi lozinku">
+                    <small class="text-danger" id="confirmError"></small>
+                </div>
+
+                <!-- Button -->
+                <div class="d-grid mt-3">
+                    <button type="submit" class="btn btn-dark">Registruj se</button>
+                </div>
+
+                <!-- Link -->
+                <div class="text-center mt-3">
+                    <p>Već imaš račun? <a href="login.html">Prijavi se</a></p>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let confirm = document.getElementById("confirmPassword").value.trim();
+
+            let valid = true;
+
+            // reset
+            document.getElementById("nameError").innerText = "";
+            document.getElementById("emailError").innerText = "";
+            document.getElementById("passwordError").innerText = "";
+            document.getElementById("confirmError").innerText = "";
+
+            // validacija
+            if (name === "") {
+                document.getElementById("nameError").innerText = "Unesi ime!";
+                valid = false;
+            }
+
+            if (email === "" || !email.includes("@")) {
+                document.getElementById("emailError").innerText = "Email nije validan!";
+                valid = false;
+            }
+
+            if (password.length < 6) {
+                document.getElementById("passwordError").innerText = "Min 6 karaktera!";
+                valid = false;
+            }
+
+            if (password !== confirm) {
+                document.getElementById("confirmError").innerText = "Lozinke se ne poklapaju!";
+                valid = false;
+            }
+
+            if (valid) {
+                // spremi korisnika (fake baza)
+                let user = {
+                    name: name,
+                    email: email,
+                    password: password
+                };
+
+                localStorage.setItem("user", JSON.stringify(user));
+
+                alert("Uspješna registracija! ✅");
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+
+</body>
+</html>

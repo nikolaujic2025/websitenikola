@@ -50,24 +50,36 @@
         <nav class="navbar navbar-expand-lg navbar-light w-100">
             <div class="container">
                 <a class="navbar-brand" href="#">NU</a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <!-- LIJEVO -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Početna</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Početna</a></li>
                         <li class="nav-item"><a class="nav-link" href="proizvodi.html">Proizvodi</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="onama.html">O nama</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="contact.html">Kontakt</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="karijera.html">Karijera</a></li>
+                        <li class="nav-item"><a class="nav-link" href="onama.html">O nama</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></li>
+                        <li class="nav-item"><a class="nav-link" href="karijera.html">Karijera</a></li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Pretraživanje" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Pretraživanje</button>
-                    </form>
+
+                    <!-- DESNO -->
+                    <div class="d-flex align-items-center gap-2">
+
+                        <!-- Search -->
+                        <input type="text" id="searchInput" class="form-control" placeholder="Pretraživanje"
+                            style="width: 200px;">
+                        <button id="searchBtn" class="btn btn-light">Pretraživanje</button>
+
+                        <!-- LOGIN -->
+                        <a href="login.html" class="btn btn-dark">Prijava</a>
+
+                    </div>
+
                 </div>
             </div>
         </nav>
@@ -733,27 +745,51 @@
 
         });
 
-document.getElementById("sortPrice").addEventListener("change", function () {
+        document.getElementById("sortPrice").addEventListener("change", function () {
 
-    const value = this.value;
+            const value = this.value;
 
-    // UZMI SVE kartice, ne samo prvi row
-    const cards = Array.from(document.querySelectorAll(".col-md-3"));
+            // UZMI SVE kartice, ne samo prvi row
+            const cards = Array.from(document.querySelectorAll(".col-md-3"));
 
-    cards.sort((a, b) => {
-        const priceA = parseFloat(a.querySelector(".card-text-cijena").dataset.price);
-        const priceB = parseFloat(b.querySelector(".card-text-cijena").dataset.price);
+            cards.sort((a, b) => {
+                const priceA = parseFloat(a.querySelector(".card-text-cijena").dataset.price);
+                const priceB = parseFloat(b.querySelector(".card-text-cijena").dataset.price);
 
-        if (value === "low-to-high") return priceA - priceB;
-        if (value === "high-to-low") return priceB - priceA;
-    });
+                if (value === "low-to-high") return priceA - priceB;
+                if (value === "high-to-low") return priceB - priceA;
+            });
 
-    // NAĐI GLAVNI KONTEJNER KOJI DRŽI SVE ROW-OVE
-    const container = document.getElementById("products");
+            // NAĐI GLAVNI KONTEJNER KOJI DRŽI SVE ROW-OVE
+            const container = document.getElementById("products");
 
-    // UBACI IH NAZAD REDOM
-    cards.forEach(card => container.appendChild(card));
-});
+            // UBACI IH NAZAD REDOM
+            cards.forEach(card => container.appendChild(card));
+        });
+
+        function loadProducts() {
+            let products = JSON.parse(localStorage.getItem("products")) || [];
+            let container = document.getElementById("products");
+
+            container.innerHTML = "";
+
+            products.forEach(p => {
+                container.innerHTML += `
+        <div class="col-md-3" data-category="${p.category}">
+            <div class="card h-100">
+                <img src="${p.image}" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>${p.name}</h5>
+                    <p>${p.price} KM</p>
+                </div>
+            </div>
+        </div>
+        `;
+            });
+        }
+
+        loadProducts();
+
     </script>
 
 </body>
