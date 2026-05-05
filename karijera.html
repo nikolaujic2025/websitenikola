@@ -75,8 +75,14 @@
                             style="width: 200px;">
                         <button id="searchBtn" class="btn btn-light">Pretraživanje</button>
 
+                        <!-- USER INFO -->
+                        <span id="userInfo" class="text-white fw-bold"></span>
+
+                        <!-- LOGOUT -->
+                        <button id="logoutBtn" class="btn btn-danger d-none">Logout</button>
+
                         <!-- LOGIN -->
-                        <a href="login.html" class="btn btn-dark">Prijava</a>
+                        <a href="login.html" id="loginBtn" class="btn btn-dark">Prijava</a>
 
                     </div>
 
@@ -320,6 +326,42 @@
 
         setInterval(updateClock, 1000);
         updateClock();
+
+        const loggedEmail = localStorage.getItem("loggedInUser");
+
+        const userInfo = document.getElementById("userInfo");
+        const logoutBtn = document.getElementById("logoutBtn");
+        const loginBtn = document.getElementById("loginBtn");
+
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        if (loggedEmail) {
+            // nađi korisnika
+            const user = users.find(u => u.email === loggedEmail);
+
+            // prikaži ime (ako postoji)
+            userInfo.textContent = user ? user.name : loggedEmail;
+
+            logoutBtn.classList.remove("d-none");
+            loginBtn.classList.add("d-none");
+        } else {
+            userInfo.textContent = "";
+            logoutBtn.classList.add("d-none");
+            loginBtn.classList.remove("d-none");
+        }
+
+        // logout
+        logoutBtn.addEventListener("click", function () {
+            localStorage.removeItem("loggedInUser");
+
+            // odmah update UI bez refresha
+            userInfo.textContent = "";
+            logoutBtn.classList.add("d-none");
+            loginBtn.classList.remove("d-none");
+
+            // opcionalno redirect
+            window.location.href = "index.html";
+        });
     </script>
 
 </body>

@@ -67,7 +67,7 @@
 
     <!-- JS -->
     <script>
-        document.getElementById("registerForm").addEventListener("submit", function(e) {
+        document.getElementById("registerForm").addEventListener("submit", function (e) {
             e.preventDefault();
 
             let name = document.getElementById("name").value.trim();
@@ -112,13 +112,32 @@
                     password: password
                 };
 
-                localStorage.setItem("user", JSON.stringify(user));
+                if (valid) {
+                    let users = JSON.parse(localStorage.getItem("users")) || [];
 
+                    const postoji = users.find(u => u.email === email);
+                    if (postoji) {
+                        document.getElementById("emailError").innerText = "Korisnik već postoji!";
+                        return;
+                    }
+
+                    users.push({
+                        name: name,
+                        email: email,
+                        password: password
+                    });
+
+                    localStorage.setItem("users", JSON.stringify(users));
+
+                }
                 alert("Uspješna registracija! ✅");
-                window.location.href = "login.html";
+                window.location.href = "index.html";
             }
         });
+
+
     </script>
 
 </body>
+
 </html>

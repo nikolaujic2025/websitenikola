@@ -180,14 +180,39 @@
 
             loadProducts();
 
-            document.getElementById("image").addEventListener("input", function() {
-    document.getElementById("preview").src = this.value;
-});
+            document.getElementById("image").addEventListener("input", function () {
+                document.getElementById("preview").src = this.value;
+            });
+
+            const user = localStorage.getItem("loggedInUser");
+
+            const userInfo = document.getElementById("userInfo");
+            const logoutBtn = document.getElementById("logoutBtn");
+            const loginBtn = document.getElementById("loginBtn");
+
+            if (user) {
+                // prikaži usera
+                userInfo.textContent = user;
+
+                // pokaži logout
+                logoutBtn.classList.remove("d-none");
+
+                // sakrij login
+                loginBtn.classList.add("d-none");
+            } else {
+                userInfo.textContent = "";
+            }
+
+            // logout funkcija
+            logoutBtn.addEventListener("click", function () {
+                localStorage.removeItem("loggedInUser");
+                window.location.href = "login.html";
+            });
 
         </script>
     </div>
-                </div>
-        </li>
+    </div>
+    </li>
 
 </body>
 
